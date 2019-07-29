@@ -149,6 +149,7 @@ public:
 	wxString m_tMMSI;
 
 	bool m_bAuto;
+  bool m_enableAPB;
 	wxDateTime m_GribTimelineTime;
 
 	double myDir;

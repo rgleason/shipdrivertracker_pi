@@ -133,12 +133,7 @@ int ShipDriver_pi::Init(void)
 	m_position_menu_id = AddCanvasContextMenuItem
 		(new wxMenuItem(&dummy_menu, -1, _("Select Vessel Start Position")), this);
 	SetCanvasContextMenuItemViz(m_position_menu_id, true);
-
-
-
       m_pDialog = NULL;
-
-	  
 
       return (
 			  WANTS_OVERLAY_CALLBACK |
@@ -502,7 +497,6 @@ bool ShipDriver_pi::GribWind(GribRecordSet *grib, double lat, double lon,
 void ShipDriver_pi::SetNMEASentence(wxString &sentence) {
 
 	// $GPAPB,A,A,0.10,R,N,V,V,011,M,DEST,011,M,011,M*3C 
-
 	if (NULL == m_pDialog) return;
 
 	wxString token[40];
@@ -516,15 +510,35 @@ void ShipDriver_pi::SetNMEASentence(wxString &sentence) {
 		token[i] = tokenizer.GetNextToken();
 		i++;
 	}
-	if (token[0].Right(3) == _T("APB")) {
-		
+  s0 = token[0];
+  s1 = token[1];
+  s11 = token[11];
+
+  // Handle HSC sentence, disable APB sentense heading for the rest of the auto period
+  /*Field Number :
+  1.Heading Degrees, True
+  2.T = True
+  3.Heading Degrees, Magnetic
+  4.M = Magnetic
+  Checksum*/
+
+
+  if (token[0].Right(3) == _T("HSC")) {
+    if (m_pDialog->m_bAuto) {
+      double value;
+      s1.ToDouble(&value);
+      m_pDialog->myDir = value;
+      m_pDialog->m_enableAPB = false;
+    }
+  }
+
+	if (token[0].Right(3) == _T("APB") ) {
 		s11 = token[11];
 
-		if (m_pDialog->m_bAuto) {
-
+		if (m_pDialog->m_bAuto && m_pDialog->m_enableAPB) {
 			double value;
 			s11.ToDouble(&value);
-			m_pDialog->myDir = value;
+      m_pDialog->myDir = value;
 		}
 		/*
 		s6 = token[6];
