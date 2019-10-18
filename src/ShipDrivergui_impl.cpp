@@ -199,7 +199,7 @@ void Dlg::StartDriving() {
 
 	m_interval = 500;
 	m_Timer->Start(m_interval, wxTIMER_CONTINUOUS); // start timer
-	m_bAuto = false;
+	m_bAuto = true;
   m_enableAPB = true;
 
 	myAIS = new AisMaker();
@@ -231,8 +231,8 @@ void Dlg::SetStop() {
 	m_interval = m_Timer->GetInterval();
 	m_bUseSetTime = false;
 	m_bUseStop = true;
-	m_bAuto = false;
-  m_enableAPB = true;
+	m_bAuto = true;
+  m_enableAPB = false;
 	m_bUsingWind = false;
 	m_bUsingFollow = false;
 
@@ -253,7 +253,7 @@ void Dlg::OnMidships(wxCommandEvent& event){
 
 void Dlg::OnMinus10(wxCommandEvent& event){
 	
-	m_bAuto = false;
+	m_bAuto = true;
 	GoToStandby();
 	myDir -= 10;
 	wxString mystring = wxString::Format(wxT("%03.0f"), myDir);
@@ -263,7 +263,7 @@ void Dlg::OnMinus10(wxCommandEvent& event){
 
 void Dlg::OnPlus10(wxCommandEvent& event){
 	
-	m_bAuto = false;
+	m_bAuto = true;
 	GoToStandby();
 	myDir += 10;
 	wxString mystring = wxString::Format(wxT("%03.0f"), myDir);
@@ -273,7 +273,7 @@ void Dlg::OnPlus10(wxCommandEvent& event){
 
 void Dlg::OnMinus1(wxCommandEvent& event){
 	
-	m_bAuto = false;
+	m_bAuto = true;
 	GoToStandby();
 	myDir -= 1;
 	wxString mystring = wxString::Format(wxT("%03.0f"), myDir);
@@ -283,7 +283,7 @@ void Dlg::OnMinus1(wxCommandEvent& event){
 
 void Dlg::OnPlus1(wxCommandEvent& event){
 	
-	m_bAuto = false;
+	m_bAuto = true;
 	GoToStandby();
 	myDir += 1;
 	wxString mystring = wxString::Format(wxT("%03.0f"), myDir);
@@ -294,7 +294,7 @@ void Dlg::OnPlus1(wxCommandEvent& event){
 void Dlg::OnAuto(wxCommandEvent& event){
 
 	m_bAuto = true;
-  m_enableAPB = true;
+  m_enableAPB = false;
 
 	m_buttonStandby->SetBackgroundColour(wxColour(255, 0, 0));
 	m_buttonAuto->SetBackgroundColour(wxColour(0, 255, 0));
@@ -309,7 +309,7 @@ void Dlg::OnStandby(wxCommandEvent& event){
 void Dlg::GoToStandby() {
 
 	m_bAuto = false;
-  m_enableAPB = true;
+  m_enableAPB = false;
 	m_buttonStandby->SetBackgroundColour(wxColour(0, 255, 0));
 	m_buttonAuto->SetBackgroundColour(wxColour(255, 255, 255));
 	Refresh();
