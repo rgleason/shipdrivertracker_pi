@@ -307,8 +307,8 @@ void Dlg::OnStandby(wxCommandEvent& event){
 }
 
 void Dlg::GoToStandby() {
-
-	m_bAuto = false;
+  return;
+	m_bAuto = true;
   m_enableAPB = false;
 	m_buttonStandby->SetBackgroundColour(wxColour(0, 255, 0));
 	m_buttonAuto->SetBackgroundColour(wxColour(255, 255, 255));
