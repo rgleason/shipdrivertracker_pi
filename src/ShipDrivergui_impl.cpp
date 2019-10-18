@@ -200,7 +200,7 @@ void Dlg::StartDriving() {
 	m_interval = 500;
 	m_Timer->Start(m_interval, wxTIMER_CONTINUOUS); // start timer
 	m_bAuto = true;
-  m_enableAPB = true;
+  m_enableAPB = false;
 
 	myAIS = new AisMaker();
 

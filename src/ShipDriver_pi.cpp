@@ -532,22 +532,22 @@ void ShipDriver_pi::SetNMEASentence(wxString &sentence) {
     }
   }
 
-	if (token[0].Right(3) == _T("APB") ) {
-		s11 = token[11];
+	//if (token[0].Right(3) == _T("APB") ) {
+	//	s11 = token[11];
 
-		if (m_pDialog->m_bAuto && m_pDialog->m_enableAPB) {
-			double value;
-			s11.ToDouble(&value);
-      m_pDialog->myDir = value;
-		}
-		/*
-		s6 = token[6];
-		if (s6 == _T("A")) {
-			wxMessageBox(_("Vessel has arrived at the final waypoint"));
-		}
-		*/
+	//	if (m_pDialog->m_bAuto && m_pDialog->m_enableAPB) {
+	//		double value;
+	//		s11.ToDouble(&value);
+ //     m_pDialog->myDir = value;
+	//	}
+	//	/*
+	//	s6 = token[6];
+	//	if (s6 == _T("A")) {
+	//		wxMessageBox(_("Vessel has arrived at the final waypoint"));
+	//	}
+	//	*/
 
-	}
+	//}
 }
 
 
