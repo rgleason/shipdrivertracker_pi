@@ -188,7 +188,7 @@ private:
 	wxString ParseNMEAIdentifier(wxString sentence);
 	wxString ParseNMEASentence(wxString sentence, wxString id);
 
-	void SetNextStep(double inLat, double inLon, double inDir, double inSpd, double &outLat, double &outLon);
+	void SetNextStep(double inLat, double inLon, double inDir, double inSpd);
 	void SetFollowStep(double inLat, double inLon, double inDir, double inSpd, double &outLat, double &outLon);
 
 	void OnStart(wxCommandEvent& event);

@@ -79,7 +79,7 @@ void Dlg::OnTimer(wxTimerEvent& event){
 	Notify();
 }
 
-void Dlg::SetNextStep(double inLat, double inLon, double inDir, double inSpd, double &outLat, double &outLon){
+void Dlg::SetNextStep(double inLat, double inLon, double inDir, double inSpd){
 	PositionBearingDistanceMercator_Plugin(inLat, inLon, inDir, inSpd, &stepLat, &stepLon);
 }
 
@@ -387,7 +387,8 @@ void Dlg::Notify()
 
 	if (!m_bUsingFollow) {
 		
-		SetNextStep(initLat, initLon, myDir, initSpd / 7200, stepLat, stepLon);
+		SetNextStep(initLat, initLon, myDir, initSpd / 7200);
+    SetNextStep(stepLat, stepLon, m_current_direction, m_current_speed / 7200);
 		
 	}
 	else {
