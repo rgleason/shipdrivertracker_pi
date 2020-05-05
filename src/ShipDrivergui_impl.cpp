@@ -329,9 +329,9 @@ void Dlg::Notify()
 
 	initSpd = m_SliderSpeed->GetValue();
 	initRudder = m_SliderRudder->GetValue();
-  m_initCurrentDir = m_SliderCurrentDir->GetValue();
-  m_initCurrentVel = m_SliderCurrentVel->GetValue();
-  wxLogMessage(wxT("$$$ m_initCurrentDir= %d, m_initCurrentVel= %d"), m_initCurrentDir, m_initCurrentVel);
+  m_current_direction = m_SliderCurrentDir->GetValue();
+  m_current_speed = m_SliderCurrentVel->GetValue();
+ // wxLogMessage(wxT("$$$ m_current_direction= %f, m_current_speed= %f"), m_current_direction, m_current_speed);
 
 	double myRudder = initRudder - 30;
 	if (myRudder < 0){
@@ -369,6 +369,12 @@ void Dlg::Notify()
 
 	wxString mystring = wxString::Format(wxT("%03.0f"), myDir);
 	m_stHeading->SetLabel(mystring);
+
+  mystring = wxString::Format(wxT("%03.0f"), m_current_direction);
+  m_currentdirlabel->SetLabel(mystring);
+
+  mystring = wxString::Format(wxT("%02.0f"), m_current_speed);
+  m_currentspeedlabel->SetLabel(mystring);
 
 	if (m_bUsingWind){
 		double polarBoatSpeed = GetPolarSpeed(initLat, initLon, myDir);

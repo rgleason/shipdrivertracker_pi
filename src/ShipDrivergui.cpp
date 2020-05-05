@@ -92,7 +92,7 @@ ShipDriverBase::ShipDriverBase( wxWindow* parent, wxWindowID id, const wxString&
 
 	bSizer16->Add( 0, 0, 1, wxEXPAND, 5 );
 
-	m_bpPlay = new wxButton( this, wxID_ANY, _("StartXX"), wxDefaultPosition, wxSize( -1,-1 ), 0 );
+	m_bpPlay = new wxButton( this, wxID_ANY, _("Start"), wxDefaultPosition, wxSize( -1,-1 ), 0 );
 	m_bpPlay->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false, wxT("Arial") ) );
 	m_bpPlay->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_WINDOW ) );
 	m_bpPlay->SetBackgroundColour( wxColour( 0, 255, 0 ) );
@@ -191,31 +191,31 @@ ShipDriverBase::ShipDriverBase( wxWindow* parent, wxWindowID id, const wxString&
 
 	bSizer71->Add( 0, 0, 1, wxEXPAND, 5 );
 
-	m_staticTextHeading1 = new wxStaticText( this, wxID_ANY, _("Current  Direction: "), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticTextHeading1 = new wxStaticText( this, wxID_ANY, _("Current  Direction.: "), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticTextHeading1->Wrap( -1 );
 	m_staticTextHeading1->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false, wxT("Arial") ) );
 
 	bSizer71->Add( m_staticTextHeading1, 0, wxALIGN_CENTER_VERTICAL, 5 );
 
-	m_stHeading1 = new wxStaticText( this, wxID_ANY, _("000"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_stHeading1->Wrap( -1 );
-	m_stHeading1->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false, wxT("Arial") ) );
+	m_currentdirlabel = new wxStaticText( this, wxID_ANY, _("000"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_currentdirlabel->Wrap( -1 );
+	m_currentdirlabel->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false, wxT("Arial") ) );
 
-	bSizer71->Add( m_stHeading1, 0, wxALIGN_CENTER_VERTICAL, 5 );
+	bSizer71->Add( m_currentdirlabel, 0, wxALIGN_CENTER_VERTICAL, 5 );
 
-	m_staticTextKnots1 = new wxStaticText( this, wxID_ANY, _("            Current velocity:  "), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticTextKnots1 = new wxStaticText( this, wxID_ANY, _("  Speed:  "), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticTextKnots1->Wrap( -1 );
 	m_staticTextKnots1->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false, wxT("Arial") ) );
 
 	bSizer71->Add( m_staticTextKnots1, 0, wxALIGN_CENTER_VERTICAL, 5 );
 
-	m_stSpeed1 = new wxStaticText( this, wxID_ANY, _("0"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_stSpeed1->Wrap( -1 );
-	m_stSpeed1->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false, wxT("Arial") ) );
+	m_currentspeedlabel = new wxStaticText( this, wxID_ANY, _("0"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_currentspeedlabel->Wrap( -1 );
+	m_currentspeedlabel->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false, wxT("Arial") ) );
 
-	bSizer71->Add( m_stSpeed1, 0, wxALIGN_CENTER_VERTICAL, 5 );
+	bSizer71->Add( m_currentspeedlabel, 0, wxALIGN_CENTER_VERTICAL, 5 );
 
-	m_staticText811 = new wxStaticText( this, wxID_ANY, _("        Kts"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText811 = new wxStaticText( this, wxID_ANY, _("    Kts"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText811->Wrap( -1 );
 	m_staticText811->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false, wxT("Arial") ) );
 

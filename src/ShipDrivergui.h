@@ -88,8 +88,8 @@ class ShipDriverBase : public wxDialog
 		wxStaticText* m_stHeading;
 		wxStaticText* m_stSpeed;
 		wxSlider* m_SliderSpeed;
-		wxStaticText* m_stHeading1;
-		wxStaticText* m_stSpeed1;
+		wxStaticText* m_currentdirlabel;
+		wxStaticText* m_currentspeedlabel;
 		wxSlider* m_SliderCurrentDir;
 		wxSlider* m_SliderCurrentVel;
 		wxTimer m_timer1;
