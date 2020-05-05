@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////
-// C++ code generated with wxFormBuilder (version Oct 26 2018)
+// C++ code generated with wxFormBuilder (version Jul 28 2019)
 // http://www.wxformbuilder.org/
 //
 // PLEASE DO *NOT* EDIT THIS FILE!
@@ -50,6 +50,13 @@ class ShipDriverBase : public wxDialog
 		wxStaticText* m_staticText81;
 		wxStaticText* m_staticText7;
 		wxStaticText* m_staticText8;
+		wxStaticText* m_staticTextHeading1;
+		wxStaticText* m_staticTextKnots1;
+		wxStaticText* m_staticText811;
+		wxStaticText* m_staticText71;
+		wxStaticText* m_staticText82;
+		wxStaticText* m_staticText72;
+		wxStaticText* m_staticText83;
 		wxButton* m_buttonStandby;
 		wxButton* m_buttonAuto;
 		wxButton* m_button7;
@@ -66,7 +73,6 @@ class ShipDriverBase : public wxDialog
 		virtual void OnStop( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnStandby( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnAuto( wxCommandEvent& event ) { event.Skip(); }
-		virtual void OnFollow(wxCommandEvent& event) { event.Skip(); }
 		virtual void OnWind( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnMinus1( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnMinus10( wxCommandEvent& event ) { event.Skip(); }
@@ -82,6 +88,10 @@ class ShipDriverBase : public wxDialog
 		wxStaticText* m_stHeading;
 		wxStaticText* m_stSpeed;
 		wxSlider* m_SliderSpeed;
+		wxStaticText* m_stHeading1;
+		wxStaticText* m_stSpeed1;
+		wxSlider* m_SliderCurrentDir;
+		wxSlider* m_SliderCurrentVel;
 		wxTimer m_timer1;
 
 		ShipDriverBase( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxEmptyString, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER );

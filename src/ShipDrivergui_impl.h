@@ -161,6 +161,7 @@ private:
 	void Notify();
 	wxString MWD, VHW, MWVA, MWVT, GLL, VTG, HDT;
 	double initDir, initSpd, initRudder, myDist, followStepDistance;
+  double m_initCurrentDir, m_initCurrentVel;
 
 	vector<rte> my_routes;
 	vector<rtept> routePoints;

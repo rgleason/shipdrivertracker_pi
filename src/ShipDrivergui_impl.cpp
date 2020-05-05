@@ -329,6 +329,9 @@ void Dlg::Notify()
 
 	initSpd = m_SliderSpeed->GetValue();
 	initRudder = m_SliderRudder->GetValue();
+  m_initCurrentDir = m_SliderCurrentDir->GetValue();
+  m_initCurrentVel = m_SliderCurrentVel->GetValue();
+  wxLogMessage(wxT("$$$ m_initCurrentDir= %d, m_initCurrentVel= %d"), m_initCurrentDir, m_initCurrentVel);
 
 	double myRudder = initRudder - 30;
 	if (myRudder < 0){
