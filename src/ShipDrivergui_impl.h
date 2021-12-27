@@ -108,7 +108,7 @@ class AisMaker;
 class Dlg : public ShipDriverBase
 {
 public:
-	Dlg(wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("ShipDriver"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = SHIPDRIVER_DLG_STYLE);
+	Dlg(wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("ShipDriverTracker"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = SHIPDRIVER_DLG_STYLE);
 	ShipDriver_pi *plugin;
 
 	wxString createVHWSentence(double stw, double hdg);

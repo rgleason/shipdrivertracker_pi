@@ -100,7 +100,7 @@ ShipDriver_pi::~ShipDriver_pi(void)
 
 int ShipDriver_pi::Init(void)
 {
-      AddLocaleCatalog( _T("opencpn-ShipDriver_pi") );
+      AddLocaleCatalog( _T("opencpn-ShipDriverTracker_pi") );
 
       // Set some default private member parameters
       m_hr_dialog_x = 40;
@@ -121,11 +121,11 @@ int ShipDriver_pi::Init(void)
       //    This PlugIn needs a toolbar icon, so request its insertion
 	if(m_bShipDriverShowIcon) {
 #ifdef SHIPDRIVER_USE_SVG
-        m_leftclick_tool_id = InsertPlugInToolSVG(_T( "ShipDriver" ), _svg_shipdriver, _svg_shipdriver, _svg_shipdriver_toggled,
-            wxITEM_CHECK, _("ShipDriver"), _T( "" ), NULL, ShipDriver_TOOL_POSITION, 0, this);
+        m_leftclick_tool_id = InsertPlugInToolSVG(_T( "ShipDriverTracker" ), _svg_shipdriver, _svg_shipdriver, _svg_shipdriver_toggled,
+            wxITEM_CHECK, _("ShipDriverTracker"), _T( "" ), NULL, ShipDriver_TOOL_POSITION, 0, this);
 #else
 		m_leftclick_tool_id = InsertPlugInTool(_T(""), _img_ShipDriverIcon, _img_ShipDriverIcon, wxITEM_CHECK,
-            _("ShipDriver"), _T(""), NULL,
+            _("ShipDriverTracker"), _T(""), NULL,
              ShipDriver_TOOL_POSITION, 0, this);
 #endif
     }
@@ -207,18 +207,18 @@ wxBitmap *ShipDriver_pi::GetPlugInBitmap()
 
 wxString ShipDriver_pi::GetCommonName()
 {
-      return _("ShipDriver");
+      return _("ShipDriverTracker");
 }
 
 
 wxString ShipDriver_pi::GetShortDescription()
 {
-      return _("ShipDriver player");
+      return _("ShipDriverTracker player");
 }
 
 wxString ShipDriver_pi::GetLongDescription()
 {
-      return _("Almost a simulator");
+      return _("Almost a simulator for AutoTrackerRaymarine");
 }
 
 int ShipDriver_pi::GetToolbarToolCount(void)
@@ -325,7 +325,7 @@ bool ShipDriver_pi::LoadConfig(void)
 
       if(pConf)
       {
-            pConf->SetPath ( _T( "/Settings/ShipDriver_pi" ) );
+            pConf->SetPath ( _T( "/Settings/ShipDriverTracker_pi" ) );
 			pConf->Read ( _T( "ShowShipDriverIcon" ), &m_bShipDriverShowIcon, 1 );
 			pConf->Read(_T("shipdriverUseAis"), &m_bCopyUseAis, 0);
 			pConf->Read(_T("shipdriverUseFile"), &m_bCopyUseFile, 0);
@@ -356,7 +356,7 @@ bool ShipDriver_pi::SaveConfig(void)
 
       if(pConf)
       {
-            pConf->SetPath ( _T ( "/Settings/ShipDriver_pi" ) );
+            pConf->SetPath ( _T ( "/Settings/ShipDriverTracker_pi" ) );
 			pConf->Write ( _T ( "ShowShipDriverIcon" ), m_bShipDriverShowIcon );
 			pConf->Write(_T("shipdriverUseAis"), m_bCopyUseAis);
 			pConf->Write(_T("shipdriverUseFile"), m_bCopyUseFile);

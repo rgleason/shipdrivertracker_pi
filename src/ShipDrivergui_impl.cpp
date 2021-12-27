@@ -66,7 +66,7 @@ Dlg::Dlg(wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& 
 	wxFileConfig *pConf = GetOCPNConfigObject();
 
 	if (pConf) {
-		pConf->SetPath(_T("/Settings/ShipDriver_pi"));
+		pConf->SetPath(_T("/Settings/ShipDriverTracker_pi"));
 
 		pConf->Read(_T("shipdriverUseAis"), &m_bUseAis, 0);
 		pConf->Read(_T("shipdriverUseFile"), &m_bUseFile, 0);
@@ -159,7 +159,7 @@ void Dlg::StartDriving() {
 
 		wxString s = _T("/");
 		wxString defaultDir = *GetpSharedDataLocation() + _T("plugins")
-			+ s + _T("ShipDriver_pi") + s + _T("data") + s;
+			+ s + _T("ShipDriverTracker_pi") + s + _T("data") + s;
 
 		wxString defaultFilename = wxEmptyString;
 		wxFileDialog filedlg(this->m_parent, caption, defaultDir, defaultFilename, wildcard, wxFD_SAVE | wxFD_OVERWRITE_PROMPT);
@@ -1173,7 +1173,7 @@ double Dlg::GetPolarSpeed(double lat, double lon, double cse){
 	wxString error;
 	wxString s = _T("/");
 	wxString polars_path = *GetpSharedDataLocation() + _T("plugins")
-		+ s + _T("ShipDriver_pi") + s + _T("data") + s;
+		+ s + _T("ShipDriverTracker_pi") + s + _T("data") + s;
 	wxString myFile = polars_path + _T("arcona.xml");
 
 	double twa = 360 - ((cse - dir) - 360);
@@ -1569,7 +1569,7 @@ wxString Dlg::StandardPath()
 	// ~/Library/Preferences/opencpn if it exists
 	wxString oldPath = (std_path.GetUserConfigDir() + s);
 	if (wxDirExists(oldPath) && !wxDirExists(stdPath)) {
-		wxLogMessage("ShipDriver_pi: moving config dir %s to %s", oldPath, stdPath);
+		wxLogMessage("ShipDriverTracker_pi: moving config dir %s to %s", oldPath, stdPath);
 		wxRenameFile(oldPath, stdPath);
 	}
 #endif
