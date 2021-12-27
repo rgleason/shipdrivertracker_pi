@@ -218,7 +218,7 @@ wxString ShipDriver_pi::GetShortDescription()
 
 wxString ShipDriver_pi::GetLongDescription()
 {
-      return _("Almost a simulator for AutoTrackerRaymarine");
+      return _("Simulator for AutoTrackerRaymarine");
 }
 
 int ShipDriver_pi::GetToolbarToolCount(void)

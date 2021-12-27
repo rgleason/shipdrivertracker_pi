@@ -23,16 +23,33 @@ void initialize_images(void)
 	}
 
 #ifdef SHIPDRIVER_USE_SVG
+//    wxFileName fn;
+//    fn.SetPath(*GetpSharedDataLocation());
+//    fn.AppendDir(_T("plugins"));
+//    fn.AppendDir(_T("ShipDriverTracker_pi"));
+//    fn.AppendDir(_T("data"));
+//    fn.SetFullName(_T("shipdriver_pi.svg"));
+//    _svg_shipdriver = fn.GetFullPath();
+//    fn.SetFullName(_T("shipdriver_pi_toggled.svg"));
+//    _svg_shipdriver_toggled = fn.GetFullPath();
+
     wxFileName fn;
-    fn.SetPath(*GetpSharedDataLocation());
-    fn.AppendDir(_T("plugins"));
-    fn.AppendDir(_T("ShipDriverTracker_pi"));
+    wxString tmp_path;
+	
+    tmp_path = GetPluginDataDir("shipdrivertracker_pi");
+    fn.SetPath(tmp_path);
     fn.AppendDir(_T("data"));
+ 
     fn.SetFullName(_T("shipdriver_pi.svg"));
     _svg_shipdriver = fn.GetFullPath();
-    fn.SetFullName(_T("shipdriver_pi_toggled.svg"));
+    wxLogMessage(_T("Loading toolbar icon: ") + _svg_shipdriver); 
+
+    fn.SetFullName(_T("shipdriver_toggled.svg"));
     _svg_shipdriver_toggled = fn.GetFullPath();
+    wxLogMessage(_T("Loading toolbar icon: ") + _svg_shipdriver_toggled); 
+
 #endif
+
 
 	return;
 }
